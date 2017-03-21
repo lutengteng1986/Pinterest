@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>css实现瀑布流</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            column-width: 250px;
+            -webkit-column-width: 250px;
+            column-gap: 5px;
+            -webkit-column-gap: 5px;
+        }
+        .container  .pic {
+            width:250px;
+            height:auto ;
+            margin:5px  0;
+        }
+        .container .pic  img  {
+            width:250px;
+            height:auto ;
+            border-radius:3px;
+        }
+        .container .pic p  {
+            padding:5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+      <div class="container">
+          <div class="pic"><img src="images/1.jpg" />
+              <p> 点我吧</p>
+          </div>
+          <div class="pic"><img src="images/2.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/3.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/4.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/5.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/6.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/7.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/8.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/9.jpg" /><p> 点我吧</p></div>
+          <div class="pic"><img src="images/10.jpg" /><p> 点我吧</p></div>
+      </div>
+      <script>
+          var  div  =  document.getElementsByTagName( "div");
+          console.log( div );
+      </script>
+</body>
+</html>

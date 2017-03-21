@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>js实现瀑布流</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+           position: relative;
+        }
+        #container .box {
+            float: left;
+            padding: 5px;;
+        }
+
+        #container .pic {
+            padding: 5px;
+            border-radius: 5px;
+           border:1px  solid  #ccc;
+            box-shadow: 0 0 5px  #ccc;
+        }
+
+        #container .pic img {
+           width:200px;
+            height:auto;
+        }
+        #container .pic p {
+            padding: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <input type="text" name = "price_id "/>
+</div>
+<div id="container">
+    <div class="box">
+        <div class="pic">
+            <img src="images/1.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/2.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/3.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/4.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/5.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/6.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/7.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/8.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/9.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/10.jpg"/>
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/2.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/3.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/4.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/5.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/6.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/7.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/8.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/9.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/10.jpg"/>
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/2.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/3.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/4.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/5.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/6.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/7.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/8.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/9.jpg"/>
+
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/10.jpg"/>
+            <p> 喜欢我，就点我吧！</p>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function(){
+        imgLocation("container","box");
+        window.onscroll = function(){
+            var imgData = {"data":[{"src":"1.jpg"},{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"5.jpg"},{"src":"6.jpg"},{"src":"7.jpg"},{"src":"8.jpg"}]};
+            if( checkFlag() ){
+                  var cparent = document.getElementById("container");
+                for( var i=0;i<imgData.data.length;i++){
+                      var ccontent = document.createElement("div");
+                    ccontent.className = "box";
+                    cparent.appendChild( ccontent);
+                    var boximg = document.createElement("div");
+                    boximg.className = "pic";
+                    ccontent.appendChild(  boximg );
+                    var img = document.createElement("img");
+                    img.src = "images/"+imgData.data[i].src;
+                    boximg.appendChild( img );
+                }
+                imgLocation("container","box");
+
+            }
+        }
+    }
+   /*判断是否加载图片*/
+    function checkFlag(){
+        var cparent = document.getElementById("container");
+        var ccontent = getChildElement(cparent ,"box");
+        var lastContentHeight = ccontent[ccontent.length -1].offsetTop;
+        var  scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+         var pageHeight = document.documentElement.clientHeight || document.bosy.clientHeight;
+        if(lastContentHeight < scrollTop+pageHeight ){
+              return true;
+        }
+    }
+      function imgLocation( parent,content){
+          //将parent下面的所有的content全部取出
+          var cparent = document.getElementById( parent );
+          var ccontent = getChildElement(cparent,content);
+          var  imgWidth = ccontent[0].offsetWidth;
+          var num = Math.floor( document.documentElement.clientWidth / imgWidth );
+          cparent.style.cssText = "width:"+imgWidth*num+"px;margin:0 auto;";
+
+          var BoxHeightArr = [];
+          for( var i=0;i<ccontent.length;i++){
+              if( i < num  ){
+                  BoxHeightArr[i] = ccontent[i].offsetHeight;
+              }else{
+                  var minHeight = Math.min.apply(null,BoxHeightArr);
+                  var  minIndex = getminheightLocation( BoxHeightArr,minHeight);
+                  ccontent[i].style.position = "absolute";
+                  ccontent[i].style.top = minHeight+"px";
+                  ccontent[i].style.left = ccontent[minIndex].offsetLeft+"px";
+                  BoxHeightArr[minIndex] = BoxHeightArr[minIndex]+ccontent[i].offsetHeight
+              }
+          }
+      }
+
+    function getminheightLocation ( boxHeightArr,minHeight){
+            for(var i in boxHeightArr){
+                if( boxHeightArr [i] == minHeight){
+                       return i;
+                }
+            }
+    }
+
+    function getChildElement(parent,content){
+        var contentArr = [];
+        var allcontent = parent.getElementsByTagName("*");
+        for(  var i = 0;i<allcontent.length;i++){
+            if( allcontent[i].className == content){
+                contentArr.push(allcontent[i])
+            }
+        }
+        return contentArr;
+    }
+
+
+</script>
+</body>
+</html>
